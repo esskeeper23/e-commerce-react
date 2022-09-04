@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className='header'>
       <NavLink to='/'>
-        <h1>E-commerce</h1>
+        <h1>e-commerce</h1>
       </NavLink>
       <nav className='header-nav'>
         <ul className='header-list'>
