@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
+import './styles/header.css'
 
 const Header = () => {
   return (
     <header className='header'>
       <NavLink to='/'>
-        <h1>e-commerce</h1>
+        <h1 className='header-title'>e-commerce</h1>
       </NavLink>
       <nav className='header-nav'>
         <ul className='header-list'>
@@ -14,7 +15,7 @@ const Header = () => {
             <NavLink 
             className={({isActive}) => isActive ? 'active-link' : ''}
             to='/login'>
-              Login 
+              <i className="fa-regular fa-user header-icon"></i>
             </NavLink>
           </li>
 
@@ -22,10 +23,12 @@ const Header = () => {
             <NavLink 
             className={({isActive}) => isActive ? 'active-link' : ''}
             to='/purchases'>
-              purchases 
+              <i class="fa-solid fa-box-archive header-icon"></i>
             </ NavLink>
           </li>
-          <li className='header-item'>cart</li>
+          <li className='header-item'>
+            <i className="fa-solid fa-cart-shopping header-icon">
+          </i></li>
         </ul>
       </nav>
     </header>

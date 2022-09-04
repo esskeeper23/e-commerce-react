@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    color: #f85555;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 14px 20px;
+}
+
+.header-list {
+    display: flex;
+}
+
+.header-item {
+    padding: 14px;
+}
+
+.header-icon{
+    color: #ababab;
+    width: 22.41px;
+    height: 22;
+}
