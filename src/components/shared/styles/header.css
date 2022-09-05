@@ -1,7 +1,13 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    width: 100vw;
     align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFF;
 }
 
 .header-title {
@@ -13,6 +19,8 @@
 
 .header-list {
     display: flex;
+    justify-content: space-around;
+    width: 40vw;
 }
 
 .header-item {
@@ -22,5 +30,5 @@
 .header-icon{
     color: #ababab;
     width: 22.41px;
-    height: 22;
+    height: 22px;
 }

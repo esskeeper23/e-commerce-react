@@ -17,7 +17,7 @@ const Home = () => {
   
   return (
     <div>
-      <div>
+      <div className='card-home-container'>
         {
           products?.map(product => (
             <CardHome

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ProductDescription from '../productDetail/productDescription'
+import ProductGallery from '../productDetail/ProductGallery'
 
 const ProductDetail = () => {
 
@@ -19,6 +20,11 @@ const ProductDetail = () => {
 
   return (
     <div>
+
+      <ProductGallery 
+        productGallery={productInfo}
+      />
+
       <ProductDescription 
         productInfo={productInfo}
       />

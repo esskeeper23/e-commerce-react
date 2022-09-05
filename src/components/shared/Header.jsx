@@ -23,7 +23,7 @@ const Header = () => {
             <NavLink 
             className={({isActive}) => isActive ? 'active-link' : ''}
             to='/purchases'>
-              <i class="fa-solid fa-box-archive header-icon"></i>
+              <i className="fa-solid fa-box-archive header-icon"></i>
             </ NavLink>
           </li>
           <li className='header-item'>
