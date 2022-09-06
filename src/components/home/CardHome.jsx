@@ -12,9 +12,7 @@ const CardHome = ({product}) => {
   return (
     <article onClick={handleClick} className='card-home'>
       <header className='card-home__header'>
-        <div>
-          <img src={product.productImgs[0]} alt="" />
-        </div>
+        <img src={product.productImgs[0]} alt="" />
       </header>
       <div className='card-home__body'>
         <h3 className='card-home__name'>{product.title}</h3>
