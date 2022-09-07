@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 import './styles/header.css'
+import CartModal from "./CartModal";
 
 const Header = () => {
+
+  const [isCartOpen, setIsCartOpen] = useState(false)
+
+  const openCart = () => setIsCartOpen(true)
+  const closeCart = () => setIsCartOpen(false)
+
   return (
     <header className='header'>
       <NavLink to='/'>
@@ -26,11 +33,15 @@ const Header = () => {
               <i className="fa-solid fa-box-archive header-icon"></i>
             </ NavLink>
           </li>
-          <li className='header-item'>
-            <i className="fa-solid fa-cart-shopping header-icon">
-          </i></li>
+          <li onClick={isCartOpen ? closeCart : openCart} className='header-item'>
+            <i  className="fa-solid fa-cart-shopping header-icon"></i>
+          </li>
         </ul>
       </nav>
+      <CartModal 
+      isCartOpen={isCartOpen}
+      closeCart={closeCart}
+      />
     </header>
   )
 }

@@ -7,7 +7,8 @@ import Purchases from './components/routes/Purchases'
 import ProductDetail from "./components/routes/ProductDetail";
 import Header from './components/shared/Header'
 import axios from 'axios'
-import Cart from './components/shared/Cart'
+import ProtectedRoutes from './components/routes/ProtectedRoutes'
+import Cart from './components/routes/Cart'
 
 function App() {
 
@@ -34,12 +35,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/purchases' element={<Purchases />} />
         <Route path='/product/:id' element={<ProductDetail />}/>
 
-
-        <Route path='/Cart' element={<Cart />}/>
-
+        <Route element={<ProtectedRoutes />} >
+          <Route path='/purchases' element={<Purchases />} />
+          <Route path='/Cart' element={<Cart />}/>
+        </Route>
 
       </Routes>
     </div>

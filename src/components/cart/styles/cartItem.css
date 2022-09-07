@@ -1,0 +1,32 @@
+.cart-item__container {
+    margin-bottom: 80px;
+}
+
+.cart-item__info {
+    display: flex;
+    width: 100%;
+}
+
+.cart-item__info-container {
+    width: 95%;
+}
+
+.cart-item__brand {
+    color: #c7c7c7;
+}
+
+.cart-item__model {
+    margin: 10px 0;
+}
+
+.cart-item__quantity {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #dcd9d9;
+    border-radius: 3px;
+}
+
+.cart-item__total-container {
+    display: flex;
+    justify-content: flex-end;
+}

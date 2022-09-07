@@ -1,0 +1,43 @@
+.login-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: hsla(0,1%,72%,.1);
+}
+
+
+.login-form {
+    background-color: #FFF;
+    max-width: 400px;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.login-title {
+    margin-bottom: 20px;
+}
+
+.login__email-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.login__pass-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 9px;
+    background-color: #f85555;
+    color: #FFF;
+}
