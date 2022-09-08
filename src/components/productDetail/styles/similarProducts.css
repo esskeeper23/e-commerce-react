@@ -1,0 +1,21 @@
+.container-similar-products {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.similar-product__title {
+    margin: 0;
+    padding: 0;
+    color: #f85555;
+}
+
+.similar-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}

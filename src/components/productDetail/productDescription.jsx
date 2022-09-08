@@ -1,4 +1,6 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import getConfig from '../../utils/getConfig'
 import './styles/productDescription.css'
 
 const productDescription = ({productInfo}) => {
@@ -12,7 +14,28 @@ const productDescription = ({productInfo}) => {
       }
     }
 
-    console.log(productInfo)
+    const handleAppToCart = () => {
+
+      const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+      const obj = {
+        id: productInfo.id,
+        quantity: 1
+      }
+  
+      axios.post(URL, obj, getConfig())
+        .then(res => {
+          const obj = {
+            "id": productInfo.id,
+            "newQuantity": counter
+        }
+        axios.patch(URL, obj, getConfig())
+          .then()
+          .catch()
+        })
+        .catch(err => console.log(err))
+      
+    }
+
   return (
     <section className='product-description'>
 
@@ -33,7 +56,7 @@ const productDescription = ({productInfo}) => {
         </div>
       </div>
 
-      <button className='product-description__add-btn'>Add to cart</button>
+      <button onClick={handleAppToCart} className='product-description__add-btn'>Add to cart</button>
 
       <article>{productInfo?.description}</article>
     </section>

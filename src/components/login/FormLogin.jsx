@@ -3,26 +3,25 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import './styles/formLogin.css'
 
-const FormLogin = () => {
+const FormLogin = ({setIsLogged}) => {
 
     const submit = data => {
         const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users/login'
-
         axios.post(URL, data)
           .then(res => {
             localStorage.setItem('token', res.data.data.token)
+            setIsLogged(res.data.data.user)
           })
           .catch(err => console.log(err))
-/*         reset({
+          reset({
             email: '',
             password: ''
-        }) */
+          })
     }
 
     const { register, handleSubmit, reset } = useForm()
 
   return (
-
     <div className='login-container'>
       <form className='login-form' onSubmit={handleSubmit(submit)}>
           <h2 className='login-title'>

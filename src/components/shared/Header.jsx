@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import './styles/header.css'
 import CartModal from "./CartModal";
@@ -6,6 +6,19 @@ import CartModal from "./CartModal";
 const Header = () => {
 
   const [isCartOpen, setIsCartOpen] = useState(false)
+
+/*     useEffect(() => {
+
+      const dropDown = e => {
+        if (e.path[0].tagName !== 'li') {
+          closeCart()
+        }
+      }
+
+    document.body.addEventListener('click', dropDown)
+
+    return () => document.body.removeEventListener('click', dropDown)
+  }, []) */
 
   const openCart = () => setIsCartOpen(true)
   const closeCart = () => setIsCartOpen(false)

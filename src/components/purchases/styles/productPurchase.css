@@ -1,0 +1,14 @@
+.product {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.product-quantity {
+
+}

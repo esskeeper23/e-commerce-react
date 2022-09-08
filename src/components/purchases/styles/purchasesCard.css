@@ -1,0 +1,16 @@
+.card-purchase {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+}
+
+.card-purchase__date-container {
+    margin-bottom: 20px;
+}
+
+hr {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

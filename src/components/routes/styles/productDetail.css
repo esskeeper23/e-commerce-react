@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+    /* acá van las reglas que aplican cuando el ancho es de más de 992px */
+    .product-detail {
+        display: flex;
+    }
+    .product-detail__container {
+        margin-top: 50px;
+    }
+  }

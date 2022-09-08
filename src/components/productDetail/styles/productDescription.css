@@ -23,10 +23,6 @@
     width: 50%;
 }
 
-/* .product-description__quantity-container {
-
-} */
-
 .product-description__quantity {
     display: flex;
     border: 1px solid #dcd9d9;

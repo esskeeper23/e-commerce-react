@@ -28,6 +28,7 @@ const CartItem = ({cartItems, getAllProducts}) => {
         <span className='cart-item__total'>Total: </span>
         <b className='cart-item__total-price'>$ {cartItems.price}</b>
       </div>
+      <hr />
     </article>
   )
 }

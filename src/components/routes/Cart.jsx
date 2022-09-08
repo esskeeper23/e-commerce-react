@@ -2,19 +2,28 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import getConfig from '../../utils/getConfig'
 import CartItem from '../cart/CartItem'
+import './styles/cart.css'
 
 const Cart = () => {
 
   const [cartItems, setCartItems] = useState()
+  const [total, setTotal] = useState()
 
   const getAllProducts = () => {
-    getConfig()
 
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
     axios.get(URL, getConfig())
-        .then(res => setCartItems(res.data.data.cart))
-        .catch(err => console.log(err))
+        .then(res => {
+          const products = res.data.data.cart.products
+          setCartItems(products)
+          const total = products.reduce((acc, cv) => {
+            return Number(cv.price) * cv.productsInCart.quantity +acc
+          }, 0)
+          setTotal(total)
+        })
+        .catch(err => setCartItems())
   }
+
   
   useEffect(() => {
     getAllProducts()
@@ -34,15 +43,18 @@ const Cart = () => {
 
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
     axios.post(URL, obj, getConfig())
-      .then()
+      .then(res => {
+        getAllProducts()
+        setTotal()
+      })
       .catch(err => console.log(err))
   }
 
   return (
-    <div>
+    <div className='cart'>
 
       {
-      cartItems?.products.map(product => (
+      cartItems?.map(product => (
           <CartItem 
           key={product.id}
           cartItems={product}
@@ -51,7 +63,14 @@ const Cart = () => {
       ))
       }
 
-      <button onClick={handleCheckout} style={{marginTop: '80px'}}>checkout</button>
+
+      <div className='cart-total'>
+        <p className='total'>Total: </p>
+        <b>$ {total}</b>
+      </div>
+      <div className='cart-btn__container'>
+      <button className='cart-btn' onClick={handleCheckout} >checkout</button>
+      </div>
     </div>
   )
 }
